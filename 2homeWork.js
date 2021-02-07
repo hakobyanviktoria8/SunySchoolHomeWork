@@ -89,19 +89,20 @@ function maxNumber(a,b,c,d) {
 
 //5.Գրել կոդ, որ թույլ կտա ստանալ նկար 5-ի տեսքը:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// let num = 16;
+// let row = 0;
+// let col = 4;
+// for (let i = 0; i < 4; i++) {
+//     while (row < 4) {
+//         for (let k = (num-col)/2; k > 0; k--) {   //6
+//             document.write("&numsp;");
+//         }
+//         for (let j = 0; j < col; j++) {
+//             document.write("0");
+//         }
+//         document.write("<br>");
+//         row++;
+//     }
+//     row = 0;
+//     col += 4;
+// }
