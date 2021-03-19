@@ -1,7 +1,7 @@
 // 1. Գրել կոդ, որը կգնտնի այն բառերը, որոնք ca  հետո կլինի կամ k կամ f  տառերից որևէ մեկը  հետո կլինի e տառը:
-
-console.log(/ca(f|k)e/gi.test("hello cae cae"));
-console.log("hello cake cafe".match(/ca[fk]e/gi));
+//
+// console.log(/ca(f|k)e/gi.test("hello cae cae"));
+// console.log("hello cake cafe".match(/ca[fk]e/gi));
 
 
 //     2.Ստեղծել կլաս, որին կանստրուկտրին տալիս ենք name1, name2 հատկությունները:
@@ -9,28 +9,28 @@ console.log("hello cake cafe".match(/ca[fk]e/gi));
 //հատկություններ ընդ որում, ժառանգում է առաջին կլասի կանստրուկտորը,
 // որպեսզի name1, name2 այդ կանստրուկտորի միջոցով տա:
 // Երկրորդ կլասում ստեղծել մեթոդ, որը արտածի անուները և իրենց երկարությոնները: Ստեղծել օբեկտ երկրորդ կլասից  և կանչել մեթոդը:
-
-class Students {
-    constructor(name1,name2){
-        this.name1 = name1;
-        this.name2 = name2;
-    }
-}
-class Path extends Students{
-    constructor(name1,name2,name3,name4){
-        super(name1,name2);
-        this.name3 = name3;
-        this.name4 = name4;
-    }
-    get_names(){
-        console.log(this.name1,this.name1.length,
-            this.name2,this.name2.length,
-            this.name3,this.name3.length,
-            this.name4,this.name4.length)
-    }
-}
-let path = new Path("Ann", "Sony","Mega","Smith");
-path.name();
+//
+// class Students {
+//     constructor(name1,name2){
+//         this.name1 = name1;
+//         this.name2 = name2;
+//     }
+// }
+// class Path extends Students{
+//     constructor(name1,name2,name3,name4){
+//         super(name1,name2);
+//         this.name3 = name3;
+//         this.name4 = name4;
+//     }
+//     get_names(){
+//         console.log(this.name1,this.name1.length,
+//             this.name2,this.name2.length,
+//             this.name3,this.name3.length,
+//             this.name4,this.name4.length)
+//     }
+// }
+// let path = new Path("Ann", "Sony","Mega","Smith");
+// path.name();
 
 //     3.Առաջադրանք ստեղծել խաղ Player VS Monster որտեղ կմրցեն Player և Monster,
 // խաղի սկիզբը հայտարարելուց հետո օգտատիրոջից պետք է հարցվեն name և weapon Player
@@ -69,6 +69,7 @@ path.name();
 // հարվածելու և ընդհանուր console.log երի համար։
 //
 // 3-րդ խնդիրը 60 միավոր է ։
+/*
 
 class Player {
     constructor(){
@@ -81,6 +82,7 @@ class Player {
 class Monster {
 
 }
+*/
 
 
 
