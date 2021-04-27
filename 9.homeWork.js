@@ -209,3 +209,130 @@ console.log(toDoList.filter("Person1", "todo"));
 console.log(toDoList.statistics());
 
 
+/*class Person {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+
+class Task {
+    constructor(id, text) {
+        this.id = id;
+        this.text = text;
+        this.log = [];
+        this.status = 'todo';
+        this.assigned = null;
+    }
+
+    set status(value) {
+        if (['todo', 'in development', 'testing', 'done'].includes(value)) {
+            this._status = value;
+            this.log.push({
+                date: new Date(),
+                status: value
+            });
+        }
+    }
+
+    get status() {
+        return this._status;
+    }
+
+    assignToPerson(person) {
+        this.assigned = person;
+    }
+
+    changeStatus(status) {
+        this.status = status;
+    }
+}
+
+class ToDoList {
+    constructor() {
+        this.taskList = [];
+        this.employee = [];
+    }
+
+    addEmployee(person) {
+        this.employee.push(person);
+    }
+
+    addTask(id, text) {
+        this.taskList.push(new Task(id, text));
+    }
+
+    assignToEmployee(personId, taskId) {
+        const task = this.taskList.find(task => task.id === taskId);
+        const person = this.employee.find(person => person.id === personId);
+        if (task && person) {
+            task.assignToPerson(person);
+        }
+    }
+
+    changeTaskStatus(taskId, status) {
+        const task = this.taskList.find(task => task.id === taskId);
+        task.changeStatus(status);
+    }
+
+    filter(name, status) {
+        return this.taskList.filter(task => {
+            if (task.assigned && task.assigned.name.indexOf(name) > -1) {
+                if (status && task.status !== status) {
+                    return false;
+                }
+                return true;
+            }
+        });
+    }
+
+    statistics() {
+        const persons = new Map();
+        this.taskList.filter(task => task.status === 'done').forEach(task => {
+            if (persons.has(task.assigned)) {
+                persons.set(task.assigned, persons.get(task.assigned) + 1);
+            } else {
+                persons.set(task.assigned, 1);
+            }
+        });
+        return [...new Map([...persons.entries()].sort((a, b) => b[1] - a[1])).keys()].map(person => person.name);
+    }
+}
+
+const person1 = new Person(1, 'Person 1');
+const person2 = new Person(2, 'Person 2');
+const person3 = new Person(3, 'Person 3');
+const person4 = new Person(4, 'Person 4');
+const person5 = new Person(5, 'Person 5');
+console.log(person1);
+
+const todoList = new ToDoList();
+todoList.addTask(0, 'teststsattsya');
+todoList.addTask(1, 'teststsattsya');
+todoList.addTask(2, 'teststsattsya');
+todoList.addTask(3, 'teststsattsya');
+todoList.addTask(4, 'teststsattsya');
+
+console.log(todoList);
+todoList.addEmployee(person1);
+todoList.addEmployee(person2);
+todoList.addEmployee(person3);
+todoList.addEmployee(person4);
+todoList.addEmployee(person5);
+console.log(todoList);
+
+todoList.assignToEmployee(1, 0);
+todoList.assignToEmployee(1, 1);
+todoList.assignToEmployee(1, 3);
+todoList.assignToEmployee(2, 2);
+todoList.assignToEmployee(3, 4);
+console.log("assignToEmployee", todoList);
+
+todoList.changeTaskStatus(0, 'done');
+todoList.changeTaskStatus(1, 'done');
+todoList.changeTaskStatus(2, 'done');
+todoList.changeTaskStatus(3, 'done');
+todoList.changeTaskStatus(4, 'done');
+console.log("changeTaskStatus",todoList);
+
+console.log(todoList.statistics());*/

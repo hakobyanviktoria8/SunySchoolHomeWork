@@ -9,7 +9,7 @@
 //հատկություններ ընդ որում, ժառանգում է առաջին կլասի կանստրուկտորը,
 // որպեսզի name1, name2 այդ կանստրուկտորի միջոցով տա:
 // Երկրորդ կլասում ստեղծել մեթոդ, որը արտածի անուները և իրենց երկարությոնները: Ստեղծել օբեկտ երկրորդ կլասից  և կանչել մեթոդը:
-//
+
 // class Students {
 //     constructor(name1,name2){
 //         this.name1 = name1;
@@ -30,7 +30,8 @@
 //     }
 // }
 // let path = new Path("Ann", "Sony","Mega","Smith");
-// path.name();
+// console.log(path);
+// path.get_names();
 
 //     3.Առաջադրանք ստեղծել խաղ Player VS Monster որտեղ կմրցեն Player և Monster,
 // խաղի սկիզբը հայտարարելուց հետո օգտատիրոջից պետք է հարցվեն name և weapon Player
@@ -69,7 +70,6 @@
 // հարվածելու և ընդհանուր console.log երի համար։
 //
 // 3-րդ խնդիրը 60 միավոր է ։
-/*
 
 class Player {
     constructor(){
@@ -82,16 +82,6 @@ class Player {
 class Monster {
 
 }
-*/
-
-
-
-
-
-
-
-
-
 
 
 
