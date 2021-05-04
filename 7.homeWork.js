@@ -30,8 +30,20 @@
 
 // 3.Ստեղծել Student կանստրոկտորը (name, age, university, years-սովորելու տարիների թիվը) հատկություններով:
 // Student կասնտրուկտորը  օգտագործելով ստեղծել Armine օբեկտը:
-//     Student կանստրուկտիր ավելացնել մեթոդը, որը թույլ կտա իմանալ ուսանող ինչ տարիքում է  ընդունվել համալսարան:
-//     Մեթոդը կանչել Armine օբեկտի համար:
+//Student կանստրուկտիր ավելացնել մեթոդը, որը թույլ կտա իմանալ ուսանող ինչ տարիքում է  ընդունվել համալսարան:
+//Մեթոդը կանչել Armine օբեկտի համար:
+
+function Student(name, age, university, years) {
+    this.name = name;
+    this.age = age;
+    this.university = university;
+    this.years = years;
+    this.getstayYear = function () {
+        return this.age - 4 - this.years
+    }
+}
+
+let arminen = new Student("Armine", 21, "USA", 3);
 
 // function  Student(name, age, university, years) {
 //     this.name = name;
@@ -52,11 +64,35 @@
 // console.log(armine);
 // armine.ageCount();
 
-//     4. Ստեղծել Car constructor ֆունկցիա , որը ունի name, year, color, maxSpeed հատկությունները,
+//4. Ստեղծել Car constructor ֆունկցիա , որը ունի name, year, color, maxSpeed հատկությունները,
 // ստեղծել bmw և mercedes օբեկտները Car constructor միջոցով:
 //     maxSpeed-ը 200-ից 500 միջակայքի պատահական թիվ է․ Ստեղծել prototype-ով drive մեթոդ ,
 // որը կախված maxSpeed-ից կտպի 0-ից 10 թվերը նույնքան միլիվայրկյան ինտեռվալը մեկ։
 // Կանչել երկու օբեկտների համար։
+
+
+// function Car(name, year, color) {
+//     this.min =200;
+//     this.max =500;
+//     this.name = name;
+//     this.year = year;
+//     this.color = color;
+//     this.maxSpeed = maxSpeeds(this.min, this.max)
+// }
+// function maxSpeeds (min,max){
+//     return Math.floor(+(Math.random() * (max - min + 1)).toFixed() + min)
+// }
+//
+// Car.prototype.drive = function () {
+//     for (let i = 0; i <= 10; i++){
+//         setTimeout(()=>{
+//             document.write(i);
+//         },i*this.maxSpeed)
+//     }
+//
+// };
+// let bmw = new Car("BmW",2020,"red",350);
+// bmw.drive();
 
 
 // function  Car(name, year, color) {
@@ -87,10 +123,24 @@
 // 5.Ստեղծել FirstTwoLetterUpperCase մեթոդ  String տեսակի համար:
 // Այն մեթեդ ցանկացած բառի առաջին երկու տառ դարձնում է մեծատառ:
 
+
+String.prototype.firstTwoLetterUpperCase = function()  {
+    return this.slice(0,2).toUpperCase() + this.slice(2);
+};
+
+a = "hello";
+// console.log(a);
+console.log("hello","hello".firstTwoLetterUpperCase());
+//
+
+
+
+
+//
 // String.prototype.firstTwoLetterUpperCase = function(){
 //     return this.slice(0,2).toUpperCase() + this.slice(2);
 // };
-//
+
 // console.log("hello".firstTwoLetterUpperCase());
 // console.log("world".firstTwoLetterUpperCase());
 
