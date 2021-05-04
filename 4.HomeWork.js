@@ -1,4 +1,11 @@
-// 1.Գրել կոդ , որը կստուգի մուտքագրված է արդյոք թիվ և եթե թիվ է այդ թվից քառակուսի արմատ կհանի:
+// 1.Գրել կոդ , որը կստուգի մուտքագրված է արդյոք թիվ
+// և եթե թիվ է այդ թվից քառակուսի արմատ կհանի:
+
+// let num = +prompt("Number");
+// if (!isNaN(num)) {
+//     console.log("Namber " + Math.sqrt(num).toFixed());
+// }
+
 
 // const number = prompt("Please enter number");
 // const checkNumber = (num) => !isNaN(num) ? Math.sqrt(num) : "Not a number";
@@ -8,6 +15,17 @@
 
 //2.Պատահական 5 թիվ գեներացնել 0-10 տիրույթում  այնպես որ , 0-5 տիրույթի թվերը կլորանան դեպի վերև իսկ
 // 5-10 տիրույթի թվերը դեպի ներքև և արտածել պատահական թիվը և կլորացած թիվը :
+// (function foo() {
+//     let max = 10;
+//     for (let i = 0; i < 5; i++) {
+//         let num = Math.random() * max + 1;
+//         if (num < 5) {
+//             console.log(num, Math.ceil(num));
+//         } else {
+//             console.log(num, Math.floor(num));
+//         }
+//     }
+// })();
 
 // const randomFunc = () => {
 //     for (let i = 0; i < 5; i++){
@@ -29,6 +47,7 @@
 
 //4. Գրել Ֆունկցիա, որ մուտքագրված բառից կարտածի միայն զույգ ինդեքս ունեցող տառերը: Օրինակ barev կդառնա brv
 
+
 // const evenOddIndex = (str) => {
 //     let evenStr = "";
 //     for (let i = 0; i < str.length; i+=2){
@@ -42,6 +61,18 @@
 
 //5.Գրել ծրագիր , որը Prompt պատուհանի title-ում կգեներացնի 5 նշանոց կոդ տառերից և թվերից կազմված և
 // եթե այցելուն ճիշտ հավաքի այդ կոդը prompt պատուհանում և հաստատի ապա alert անի ճիշտ է, այլապես alert անի սխալ է:
+
+//
+// (function foo() {
+//     let min = 48, max = 122, str = "";
+//     for (let i = 0; i < 5; i++) {
+//         let num = Math.random() * (max - min + 1) + min;
+//         str += String.fromCharCode(num);
+//     }
+//     let x = prompt("Write right " + str);
+//     console.log(x === str ? "ճիշտ է" : "սխալ է", str);
+// })();
+
 
 //48-57 number
 //65-90 LETTER
@@ -68,4 +99,19 @@
 
 //առավել հեշտ տարբերակ, սակայն կընդգրկի նաև սիմվոլները
 //String.fromCharCode(Math.floor(Math.random() * (122-48 + 1) + 48))
+
+let arr=[1,2,3,4];
+for (let val of arr){
+    console.log(val)
+}
+
+let obj = {
+    a:1,
+    b:2,
+    c:3
+};
+for (let val in obj){
+    console.log(obj[val])
+}
+
 

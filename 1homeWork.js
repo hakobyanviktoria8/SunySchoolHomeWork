@@ -15,8 +15,13 @@
 //3.Գրել կոդ , որը կստուգի prompt-ով տրված թիվը 8-20 միջակայքում  է, թե ոչ:
 // Console-ում  տպի true եթե ճիշտ է և false եթե սխալ է:
 
-// let number = prompt("Plese write 8-20 number.");
+let number = prompt("Plese write 8-20 number.");
 // console.log(number > 8 && number < 20);
+
+if (!isNaN(number) && number > 8 && number < 20){
+    console.log(true);
+}
+console.log(false);
 
 //4.console.log(undefined || 0 || null || true && "0" && " " && 5 || 9)
 // Կոդը տեղադրել script-ում և գրել մեկնաբանություններ այս  գործողությունների արդյունքի մասին   և ինչու է այդպես:
@@ -26,6 +31,7 @@
 // console.log(undefined || 0 || null || true && "0" && " "); //" " when true || true return last true
 // console.log(undefined || 0 || null || true && "0" && " " && 5 || 9); //5 when true || true return first true
 
+// && 1ina anum
 
 //5.Ներքոնշյալ կոդը տեղադրել script-ում և գրել մեկնաբանություններ այս  գործողությունների արդյունքները  ըստ տողերի և ինչու է այդպես
 
@@ -38,3 +44,15 @@
 // console.log(undefined + 1); // NaN undefined is nothing
 // console.log("apple" > "pineapple"); //false compares ascii codes 97 > 112
 // console.log("2" > "12"); //true compares string ASCII codes 50 > 49
+
+
+//Alt & number
+// ☺
+// ♥
+// ♣
+// •
+// A
+// ↓
+// $
+// ♫
+// .

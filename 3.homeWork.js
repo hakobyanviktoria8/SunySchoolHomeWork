@@ -16,13 +16,35 @@
 // եթե երկու պայմաններին  էլ բավարարի թող արտածի <<ճիշտ է>> բառը,
 // իսկ եթե գոնե մեկին չի բավարարում արտածի սխալ է բառը:
 
+// function first(n) {
+//     if (25 < n && n < 65) {
+//        return true
+//     }
+// }
+//
+// function isPrime(n) {
+//     let ispr = true;
+//     for (let i = 2; i < n / 2; i++) {
+//         if (n > 1 && n % i === 0) {
+//             ispr = false;
+//             break
+//         }
+//     }
+//     return ispr
+// }
+//
+// function end(f1,f2) {
+//     console.log(f1 && f2 ? "ճիշտ է" : "սխալ է")
+// }
+//
+// end(first(310), isPrime(310));
 
+//
 // const n_to_m_number = () => {
 //     const num = prompt("Please enter 25 to 65 number!");
 //     alert( num > 25 && num < 65 ? is_prime(num) : `սխալ է, \n the number is out of range`)
 // };
 // const is_prime = num => {
-//     console.log("hi");
 //     let message;
 //     for (let i = 2; i <= Math.sqrt(num); i++){
 //         if(num % i === 0 ){
@@ -50,10 +72,9 @@
 //     return prime;
 // };
 // console.log(is_prine(num));
-//
+// //
 // const check_function = (fun1, fun2) => fun1 && fun2 ? "ճիշտ է" : "սխալ է";
 // alert(check_function(n_to_m_number(num), is_prine(num)));
-
 
 
 //3.Գրել ֆունկցիա , որը կստուգի արդյուք  օբյեկտը դատարակ է թե ոչ:
@@ -79,6 +100,19 @@
 
 //4.Կա օբեկտ  box անունով, որը ունի   հատկություններ big 250 արժեքով, middle 400 արժեքով  և small 350 աժեքով:
 // Գրել ֆունկցիա որը կհաշվի այս հատկությունների աժեքների գումարը:
+
+// let box = {
+//     big: 250,
+//     middle: 400,
+//     small: 350,
+// };
+//
+// console.log(Object.values(box).reduce((a, b) => a + b));
+
+
+
+
+
 
 // const box = {
 //     big: 250,
@@ -111,6 +145,7 @@
 // 5.Ստեղծեք մարդ օբյեկտ: Այն պետք է ունենա անուն, ազգանուն, սեռ և տարիք հատկությունները:
 // Ստեղծեք մեթոդ, որը կախված նրանից թե տվյալ մարդը ինչ սեռի ներկայացուցիչ է և որ տարիքային խմբին
 // է պատկանում թող արտածի համապատասխան թեքստը:
+
 //
 //     ➢ Եթե նա կին է
 // o մեծ  63-ից, ապաարտածում է ՙՙնա տատիկ է՞՞:
@@ -121,7 +156,21 @@
 // o Եթե 17-65 տարեկան է, ապա արտածում է  ՞՞նա աշխատող է՞՞:
 // o Եթե 0-17, ապա  արտածում է ՞՞նա փոքր տղա է՞՞:
 //
-// Մինչև այս մեթոդը կանչելը այցելուն կարող է prompt-ով փոխել  սեռը և տարիքը կամ թողնել նույնը, որից հետո կիմանա իր կարգավիճակը:
+// Մինչև այս մեթոդը կանչելը այցելուն կարող է prompt-ով փոխել  սեռը և տարիքը կամ թողնել նույնը,
+// որից հետո կիմանա իր կարգավիճակը:
+
+let gender = prompt("gender");
+let age = +prompt("age");
+let people = {
+    fName: "",
+    lName: "",
+    gender: gender || "",
+    age: age ||"",
+};
+
+
+console.log(age);
+
 
 // const gender = prompt("Please enter your gender: Mail or Femail");
 // const age = prompt("Please enter your age");
@@ -141,5 +190,4 @@
 //     } return "You have entered wrong input!"
 // };
 // alert(sortGender(gender, age));
-
 
