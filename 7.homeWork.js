@@ -128,6 +128,7 @@ String.prototype.firstTwoLetterUpperCase = function()  {
     return this.slice(0,2).toUpperCase() + this.slice(2);
 };
 
+
 a = "hello";
 // console.log(a);
 console.log("hello","hello".firstTwoLetterUpperCase());
