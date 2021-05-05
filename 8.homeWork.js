@@ -124,9 +124,11 @@ function Cart() {
         this.arr.push(pro);
     };
     this.addPrice = function () {
-        let sum = 0;
-        this.arr.map(x => sum += x.price);
-        return sum
+        return this.arr.reduce((sum,x)=>sum+x.price,0)
+        //Ayl tarberak
+        // let sum = 0;
+        // this.arr.map(x => sum += x.price);
+        // return sum
     }
 }
 

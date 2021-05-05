@@ -1,7 +1,72 @@
+// class Cart1 {
+//     _sam = "Sam";
+//     arr1=[];
+//     // constructor(name, price){
+//     //     this.name = name;
+//     //     this.price=price
+//     // }
+//     addProduct(prod){
+//         this.arr1.push(prod);
+//     }
+//     get addPrice(){
+//         return this.arr1.reduce((sum,x)=>sum+x.pen,0)
+//     }
+//     set sam(val){
+//         this._sam = val
+//     }
+//     get sam(){
+//         console.log(this._sam);
+//     }
+// }
+// let panf = new Cart1();
+// panf.addProduct({pen:10});
+// panf.addProduct({pen:20});
+// console.log(panf);
+// console.log(panf.addPrice);
+// console.log(panf._sam);
+
+// class Person {
+//     constructor(firstName, lastName) {
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//     }
+//     get fullName() {
+//         return this.firstName + ' ' + this.lastName;
+//     }
+//
+//     set fullName(str) {
+//         let names = str.split(' ');
+//         if (names.length === 2) {
+//             this.firstName = names[0];
+//             this.lastName = names[1];
+//         } else {
+//             throw 'Invalid name format';
+//         }
+//     }
+// }
+//
+// let mary = new Person('Mary', 'Doe');
+// console.log(mary.fullName); // Mary Doe
+
 //1.Ստեղծել կլաս , կանստրուկտորի միջոցով   տալ number հատկություն:
 // Ստեղծել այդ կլասում մեթոդը, որը  կանչելիս  այդ թիվ հատկության արժեքից
 // կհանի  այցելուի մուտքագրած թիվը:2
 //
+
+// class Class {
+//     constructor(number){
+//         this.number = number;
+//     };
+//     num=prompt("Number");
+//     describle(){
+//         return this.number - this.num
+//     }
+// }
+//
+// let a=new Class(2);
+// console.log(a.describle());
+
+
 // const num = prompt("Please write number");
 //
 // class Subtraction {
@@ -24,6 +89,21 @@
 // այդ արժեքը: Ստեղծել get մեթոդ, որ թույլ կտա արտածել mail հատկության արժեք
 // եթե կա արժեք կամ արտածի "No" :
 //
+//
+// class Class {
+//     constructor(email) {
+//         this.email = email
+//     }
+//     set email(mail) {
+//         this._mail = /(mail.ru|gmail.com)$/.test(mail) ? mail:"No"
+//     }
+//     get email() {
+//         return this._mail
+//     }
+// }
+// let a= new Class("viki@mail.ru");
+//
+// console.log(a.email);
 
 
 // class EmailChack {
@@ -50,11 +130,10 @@
 
 
 // 3. Ստեղծել Person, Task և ToDoList կլասներ ։
-// Person-ը ունի id (չկրկնվող արժեք), name հատկությունները ։
+// Person-ը ունի id (չկրկնվող արժեք), name հատկությունները։
 // Task ունի id (չկրկնվող արժեք), text , assigned, log, և status հատկությունները ։
 // text-ը պարդադիր պետք է փոխանցվի task ստեղծելուց։
 // assigned-ը սկզբից դատարկ է , իսկ status-ը կարող է լինել միայն
-
 // task ստեղծելուց հետո պետք է հնարավորթյուն ունենա assignToPerson մեթոդի
 // միջոցով կցել կոնկրետ մարդու ․ assigned հատկությանը վերագրելով Person-ից
 // ստեղծված օբեկտ,ունենա changeStatus մեթոդ որով կկարողանանք փոխել ստատուսը ։
@@ -72,141 +151,142 @@
 // աշխատակիցների ցանկը ըստ հերթականությամբ , ով ավելի շատ թասկ ունի done
 // ստատուսով։
 //
+
 // 3-րդ խնդիրը 60 միավոր է ։
 
-class Person {
-    constructor(id, name) {
-        this.id = id; //+new Date()
-        this.name = name;
-    }
-}
-
-class Task {
-    constructor(id, text) {
-        this.id = id;
-        this.text = text;
-        this.log = [];
-        this.status = 'todo';
-        this.assigned = null;
-    }
-
-    set status(val) {
-        if (['todo', 'in development', 'testing', 'done'].includes(val)) {
-            this._status = val;
-            this.log.push({
-                date: new Date(),
-                status: val
-            });
-        }
-    }
-
-    get status() {
-        return this._status
-    }
-
-    assignToPerson(person) {
-        this.assigned = person
-    }
-
-    changeStatus(status) {
-        this.status = status
-    }
-
-}
-
-class ToDoList {
-    constructor() {
-        this.taskList = [];
-        this.employList = [];
-    }
-
-    addEmployee(person) {
-        this.employList.push(person)
-    }
-
-    addTask(id, text) {
-        this.taskList.push(new Task(id, text))
-    }
-
-    assignToEmployee(personId, taskId) {
-        let task = this.taskList.find(x => x.id === taskId);
-        let person = this.employList.find(x => x.id === personId);
-        if (task && person) {
-            task.assignToPerson(person)
-        }
-    }
-
-    changeTaskStatus(taskId, status) {
-        let task = this.taskList.find(x => x.id === taskId);
-        task.changeStatus(status)
-    }
-
-    filter(name, status) {
-        return this.taskList.filter(x => {
-            if (x.assigned && x.assigned.name.indexOf(name) > -1) {
-                if (status && x.status !== status) {
-                    return false
-                }
-                return true
-            }
-        });
-    }
-
-    statistics() {
-        let person = new Map();
-        this.taskList.filter(x => x.status === "done").forEach(x => {
-            if (person.has(x.assigned)) {
-                person.set(x.assigned, person.get(x.assigned) + 1)
-            } else {
-                person.set(x.assigned, 1)
-            }
-        });
-        return [...new Map([...person.entries()].sort((a, b) => b[1] - a[1])).keys()].map(x => x.name)
-    }
-}
-
-const p1 = new Person(1, "Person1");
-const p2 = new Person(2, "Person2");
-const p3 = new Person(3, "Person3");
-const p4 = new Person(4, "Person4");
-const p5 = new Person(5, "Person5");
-
-console.log(p1);
-const task = new Task(1, "tasssk1");
-console.log(task);
-const toDoList = new ToDoList();
-console.log(toDoList);
-toDoList.addTask(0, 'task0');
-toDoList.addTask(1, 'task1');
-toDoList.addTask(2, 'task2');
-toDoList.addTask(3, 'task3');
-toDoList.addTask(4, 'task4');
-console.log(toDoList);
-
-toDoList.addEmployee(p1);
-toDoList.addEmployee(p2);
-toDoList.addEmployee(p3);
-toDoList.addEmployee(p4);
-toDoList.addEmployee(p5);
-console.log(toDoList);
-
-toDoList.assignToEmployee(1, 0);
-toDoList.assignToEmployee(1, 1);
-toDoList.assignToEmployee(1, 2);
-toDoList.assignToEmployee(3, 2);
-toDoList.assignToEmployee(2, 2);
-console.log("assignToEmployee", toDoList);
-
-toDoList.changeTaskStatus(0, "dane");
-toDoList.changeTaskStatus(1, "dane");
-toDoList.changeTaskStatus(2, "dane");
-toDoList.changeTaskStatus(3, "dane");
-toDoList.changeTaskStatus(4, "dane");
-console.log(toDoList);
-toDoList.filter("Person1", "done");
-console.log(toDoList.filter("Person1", "todo"));
-
-console.log(toDoList.statistics());
+// class Person {
+//     constructor(id, name) {
+//         this.id = id; //+new Date()
+//         this.name = name;
+//     }
+// }
+//
+// class Task {
+//     constructor(id, text) {
+//         this.id = id;
+//         this.text = text;
+//         this.log = [];
+//         this.status = 'todo';
+//         this.assigned = null;
+//     }
+//
+//     set status(val) {
+//         if (['todo', 'in development', 'testing', 'done'].includes(val)) {
+//             this._status = val;
+//             this.log.push({
+//                 date: new Date(),
+//                 status: val
+//             });
+//         }
+//     }
+//
+//     get status() {
+//         return this._status
+//     }
+//
+//     assignToPerson(person) {
+//         this.assigned = person
+//     }
+//
+//     changeStatus(status) {
+//         this.status = status
+//     }
+//
+// }
+//
+// class ToDoList {
+//     constructor() {
+//         this.taskList = [];
+//         this.employList = [];
+//     }
+//
+//     addEmployee(person) {
+//         this.employList.push(person)
+//     }
+//
+//     addTask(id, text) {
+//         this.taskList.push(new Task(id, text))
+//     }
+//
+//     assignToEmployee(personId, taskId) {
+//         let task = this.taskList.find(x => x.id === taskId);
+//         let person = this.employList.find(x => x.id === personId);
+//         if (task && person) {
+//             task.assignToPerson(person)
+//         }
+//     }
+//
+//     changeTaskStatus(taskId, status) {
+//         let task = this.taskList.find(x => x.id === taskId);
+//         task.changeStatus(status)
+//     }
+//
+//     filter(name, status) {
+//         return this.taskList.filter(x => {
+//             if (x.assigned && x.assigned.name.indexOf(name) > -1) {
+//                 if (status && x.status !== status) {
+//                     return false
+//                 }
+//                 return true
+//             }
+//         });
+//     }
+//
+//     statistics() {
+//         let person = new Map();
+//         this.taskList.filter(x => x.status === "done").forEach(x => {
+//             if (person.has(x.assigned)) {
+//                 person.set(x.assigned, person.get(x.assigned) + 1)
+//             } else {
+//                 person.set(x.assigned, 1)
+//             }
+//         });
+//         return [...new Map([...person.entries()].sort((a, b) => b[1] - a[1])).keys()].map(x => x.name)
+//     }
+// }
+//
+// const p1 = new Person(1, "Person1");
+// const p2 = new Person(2, "Person2");
+// const p3 = new Person(3, "Person3");
+// const p4 = new Person(4, "Person4");
+// const p5 = new Person(5, "Person5");
+//
+// console.log(p1);
+// const task = new Task(1, "tasssk1");
+// console.log(task);
+// const toDoList = new ToDoList();
+// console.log(toDoList);
+// toDoList.addTask(0, 'task0');
+// toDoList.addTask(1, 'task1');
+// toDoList.addTask(2, 'task2');
+// toDoList.addTask(3, 'task3');
+// toDoList.addTask(4, 'task4');
+// console.log(toDoList);
+//
+// toDoList.addEmployee(p1);
+// toDoList.addEmployee(p2);
+// toDoList.addEmployee(p3);
+// toDoList.addEmployee(p4);
+// toDoList.addEmployee(p5);
+// console.log(toDoList);
+//
+// toDoList.assignToEmployee(1, 0);
+// toDoList.assignToEmployee(1, 1);
+// toDoList.assignToEmployee(1, 2);
+// toDoList.assignToEmployee(3, 2);
+// toDoList.assignToEmployee(2, 2);
+// console.log("assignToEmployee", toDoList);
+//
+// toDoList.changeTaskStatus(0, "dane");
+// toDoList.changeTaskStatus(1, "dane");
+// toDoList.changeTaskStatus(2, "dane");
+// toDoList.changeTaskStatus(3, "dane");
+// toDoList.changeTaskStatus(4, "dane");
+// console.log(toDoList);
+// toDoList.filter("Person1", "done");
+// console.log(toDoList.filter("Person1", "todo"));
+//
+// console.log(toDoList.statistics());
 
 
 /*class Person {
