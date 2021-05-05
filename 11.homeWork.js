@@ -1,5 +1,10 @@
-//1. Գրել ծրագիր , որ կփոխի img1.jpg div-ի մեջ գտնվող p-երի  տեքստերը New text արտահայտությունով:
+//1. Գրել ծրագիր , որ կփոխի img1.jpg div-ի մեջ գտնվող p-երի
+// տեքստերը New text արտահայտությունով:
 //
+//
+// let ps = document.querySelectorAll("#demo p");
+// [...ps].map(x=>x.innerText = "New Text");
+
 // let paragraphs = document.querySelectorAll("#demo p");
 // for (let p of paragraphs){
 //     p.innerText = "New text"
@@ -10,6 +15,15 @@
 // 2.Ունենք 7 տողանոց և 7 սյունյականոց  աղյուսակ, որի բոլոր բջիջներում գրված է cell:
 // Գրել կոդ , որը  անկյունագծի cell փոխարինի թվերով ինչպես img2-ում է:
 //
+//
+// let table = document.querySelector("#table");
+// console.log(table.rows);
+// let rows = table.rows, cells = rows[0].cells;
+// console.log(rows[0].cells);
+//
+// [...rows].map((x,i)=>rows[i].cells[i].innerText = 0);
+
+
 // function table_cell_change() {
 //     let table = document.querySelector("#table tbody");
 //
@@ -39,8 +53,14 @@
 // table2_func(7);
 
 
-// 3․Ունենք էջ , որում կա p  թեգեր: Ստանալ զանգված որում հավաքված կլինի p թեգերի պարունակությունները և
-// արտածել այդ զանգվածը:
+// 3․Ունենք էջ , որում կա p  թեգեր: Ստանալ զանգված որում հավաքված կլինի p թեգերի
+// պարունակությունները և արտածել այդ զանգվածը:
+//
+
+
+// let ps= document.querySelectorAll("#ps p");
+// let val= [...ps].map(x=>x.outerText);
+// console.log(val);
 //
 
 // function p_s() {
@@ -63,6 +83,13 @@
 
 // 4․Ունենք վեբ էջ : Ստուգել արդյոք այդ body-ի մեջ գտնվող թեգերում  կա SUNNY SCHOOL բառը և
 // արտածել այն թեգերի անուները որում այդ արտահայտությունը կա:
+
+// let sunnySchool = document.children;
+// console.log(sunnySchool);
+// console.log(document.querySelectorAll('*'));
+// console.log(new Set([...document.querySelectorAll('*')].map(x => x.outerText.includes("SUNNY"))).size>1&&"Include");
+
+
 //
 // let elems = document.body.children;
 // for (let i of elems){
@@ -72,7 +99,7 @@
 //     }
 // }
 //
-// // console.log(elems);
+// console.log(elems);
 // [...elems].map(x => x.innerText.includes("SUNNY SCHOOL") &&
 //     console.log(x.tagName)
 // );
@@ -81,6 +108,13 @@
 
 // 5.Ստեղծել ծրագիր որը կգտնի էջում գտնվող p թեգի  տեքստում քանի թիվ
 // կա և արտածել այդ թվերի զանգվածը:
+
+
+let p = document.querySelector("#psp");
+console.log(p.outerText);
+let str= p.outerText;
+console.log(str.match(/\d/g));
+
 
 // function num_count() {
 //     let p_s = document.querySelectorAll("p");

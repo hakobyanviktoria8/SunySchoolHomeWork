@@ -1,5 +1,10 @@
 // 1. Գրել կոդ, որը կգնտնի այն բառերը, որոնք ca  հետո կլինի կամ k կամ f  տառերից որևէ մեկը  հետո կլինի e տառը:
 //
+
+
+// console.log(/ca[k|f]e/gi.test("cafe"));
+
+
 // console.log(/ca(f|k)e/gi.test("hello cae cae"));
 // console.log("hello cake cafe".match(/ca[fk]e/gi));
 
@@ -8,7 +13,33 @@
 //     Ստեղծել կլաս, որը ժառանգում է այդ կլասին և կանստրուկտրին տալիս ենք name1, name2, name3, name4
 //հատկություններ ընդ որում, ժառանգում է առաջին կլասի կանստրուկտորը,
 // որպեսզի name1, name2 այդ կանստրուկտորի միջոցով տա:
-// Երկրորդ կլասում ստեղծել մեթոդ, որը արտածի անուները և իրենց երկարությոնները: Ստեղծել օբեկտ երկրորդ կլասից  և կանչել մեթոդը:
+// Երկրորդ կլասում ստեղծել մեթոդ, որը արտածի անուները և իրենց երկարությոնները: Ստեղծել օբեկտ երկրորդ
+// կլասից  և կանչել մեթոդը:
+
+
+class Class1 {
+    constructor(name1, name2){
+        this.name1 = name1;
+        this.name2 = name2;
+    }
+}
+class Class2 extends Class1{
+    constructor(name1, name2, name3, name4){
+        super(name1, name2);
+        this.name3 = name3;
+        this.name4 = name4;
+    }
+    seyName(){
+        console.log("name1", this.name1,this.name1.length );
+        console.log("name2", this.name2,this.name2.length );
+        console.log("name3", this.name3,this.name3.length );
+        console.log("name4", this.name4,this.name4.length );
+    }
+}
+let a= new Class2("Ann","Ed","Sam","Jhon");
+
+a.seyName();
+
 
 // class Students {
 //     constructor(name1,name2){
@@ -71,17 +102,17 @@
 //
 // 3-րդ խնդիրը 60 միավոր է ։
 
-class Player {
-    constructor(){
-        this.name = prompt("Please write Player name");
-    }
-
-}
-
-
-class Monster {
-
-}
+// class Player {
+//     constructor(){
+//         this.name = prompt("Please write Player name");
+//     }
+//
+// }
+//
+//
+// class Monster {
+//
+// }
 
 
 
