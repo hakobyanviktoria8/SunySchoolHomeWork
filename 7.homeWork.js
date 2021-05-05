@@ -124,15 +124,31 @@ let arminen = new Student("Armine", 21, "USA", 3);
 // Այն մեթեդ ցանկացած բառի առաջին երկու տառ դարձնում է մեծատառ:
 
 
-String.prototype.firstTwoLetterUpperCase = function()  {
-    return this.slice(0,2).toUpperCase() + this.slice(2);
-};
+// String.prototype.firstTwoLetterUpperCase = function()  {
+//     return this.slice(0,2).toUpperCase() + this.slice(2);
+// };
 
 
-a = "hello";
-// console.log(a);
-console.log("hello","hello".firstTwoLetterUpperCase());
+// a = "hello";
+// // console.log(a);
+// console.log("hello","hello".firstTwoLetterUpperCase());
+// //
 //
+// let json = '{ "age": 30 }'; // incomplete data
+
+try {
+
+    let user = JSON.parse(json); // <-- no errors
+
+    if (!user.name) {
+        throw new SyntaxError("Incomplete data: no name"); // (*)
+    }
+
+    alert( user.name );
+
+} catch(e) {
+    alert( "JSON Error: " + e.message ); // JSON Error: Incomplete data: no name
+}
 
 
 
