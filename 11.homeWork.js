@@ -84,14 +84,8 @@
 // 4․Ունենք վեբ էջ : Ստուգել արդյոք այդ body-ի մեջ գտնվող թեգերում  կա SUNNY SCHOOL բառը և
 // արտածել այն թեգերի անուները որում այդ արտահայտությունը կա:
 
-// let sunnySchool = document.children;
-// console.log(sunnySchool);
-// console.log(document.querySelectorAll('*'));
-// console.log(new Set([...document.querySelectorAll('*')].map(x => x.outerText.includes("SUNNY"))).size>1&&"Include");
-
-
 //
-// let elems = document.body.children;
+let elems = document.body.children;
 // for (let i of elems){
 //     // console.log(i);
 //     if (i.innerText.match("SUNNY SCHOOL")) {
@@ -99,21 +93,21 @@
 //     }
 // }
 //
-// console.log(elems);
-// [...elems].map(x => x.innerText.includes("SUNNY SCHOOL") &&
-//     console.log(x.tagName)
-// );
-
+console.log(elems);
+[...elems].map(x => x.innerText.includes("SUNNY SCHOOL") &&
+    console.log(x.tagName)
+);
+[...document.querySelectorAll('body *')].map(x => x.outerText.includes("SUNNY") && console.log(x.tagName));
 
 
 // 5.Ստեղծել ծրագիր որը կգտնի էջում գտնվող p թեգի  տեքստում քանի թիվ
 // կա և արտածել այդ թվերի զանգվածը:
 
 
-let p = document.querySelector("#psp");
-console.log(p.outerText);
-let str= p.outerText;
-console.log(str.match(/\d/g));
+// let p = document.querySelector("#psp");
+// console.log(p.outerText);
+// let str= p.outerText;
+// console.log(str.match(/\d/g));
 
 
 // function num_count() {
